@@ -1,6 +1,1 @@
-# Todos os arquivos .sql serão tratados como SQL
 *.sql linguist-language=SQL
-
-# Ignorar arquivos temporários do Windows ou editores (opcional)
-*.tmp linguist-vendored
-*.bak linguist-vendored
