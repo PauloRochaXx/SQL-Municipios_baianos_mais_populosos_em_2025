@@ -7,7 +7,7 @@ Projeto que analisa os municípios da Bahia mais populosos em 2025 com base em d
 ## Dados Utilizados
 
 - **Estimativas da população residente nos municípios (IBGE)**  
-  https://www.ibge.gov.br/estatisticas/sociais/populacao/9103-estimativas-de-populacao.html
+  [https://www.ibge.gov.br/estatisticas/sociais/populacao/9103-estimativas-de-populacao.html]
 
 - **Divisão Territorial Brasileira (IBGE)** – códigos e limites municipais  
   https://www.ibge.gov.br/geociencias/organizacao-do-territorio/divisao-regional/23701-divisao-territorial-brasileira.html
