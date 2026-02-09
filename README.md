@@ -1,4 +1,6 @@
+![T-SQL](https://img.shields.io/badge/T-SQL-Advanced-blue)
 # Municípios Baianos Mais Populosos em 2025
+> Este projeto utiliza T-SQL avançado, incluindo SELECT TOP, WHERE, INNER JOIN, EXCEPT, UPDATE, ALTER TABLE e DROP COLUMN, demonstrando domínio completo de consultas, manipulação de dados e alterações de estrutura de tabelas no SQL Server.
 
 Este projeto analisa os municípios da Bahia com maior população em 2025, usando dados oficiais do IBGE e a distribuição dos territórios de identidade do FUNCEB. O objetivo é fornecer uma análise clara, organizada e reproduzível da população municipal e sua distribuição territorial.
 
