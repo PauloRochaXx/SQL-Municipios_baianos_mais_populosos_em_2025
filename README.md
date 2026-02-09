@@ -1,93 +1,45 @@
-# Municípios mais populosos da Bahia – 2025
+# Municípios Baianos Mais Populosos em 2025
 
-Este repositório reúne **consultas SQL aplicadas à organização e análise de dados públicos de população dos municípios da Bahia**, a partir de bases oficiais.
-
-O projeto está estruturado em **quatro etapas principais**, desde a preparação e limpeza das tabelas até a elaboração de consultas analíticas sobre municípios com maior população.
+Projeto que analisa os municípios da Bahia mais populosos em 2025 com base em dados oficiais do IBGE e na distribuição dos territórios de identidade do estado.
 
 ---
 
-## 📊 Fonte dos dados
+## Dados Utilizados
 
-As bases utilizadas neste projeto foram obtidas a partir de **fontes oficiais**:
+- **Estimativas da população residente nos municípios (IBGE)**  
+  https://www.ibge.gov.br/estatisticas/sociais/populacao/9103-estimativas-de-populacao.html
 
-1. **Estimativas de População do IBGE (2025)**  
-   Base para o arquivo `pop2025_20260113.csv`.  
-   [IBGE – Estimativas de População 2025](https://www.ibge.gov.br/estatisticas/sociais/populacao/9103-estimativas-de-populacao.html)
+- **Divisão Territorial Brasileira (IBGE)** – códigos e limites municipais  
+  https://www.ibge.gov.br/geociencias/organizacao-do-territorio/divisao-regional/23701-divisao-territorial-brasileira.html
 
-2. **DBT 2024 (Divisão Territorial Brasileira)**  
-   Base utilizada para a criação da `tabela_cod_mun`.  
-   [IBGE – Divisão Territorial Brasileira](https://www.ibge.gov.br/geociencias/organizacao-do-territorio/divisao-regional/23701-divisao-territorial-brasileira.html)
+- **Territórios de Identidade da Bahia (FUNCEB)** – PDF com relação dos territórios  
+  https://www.ba.gov.br/fundacaocultural/sites/site-funceb/files/migracao_2024/arquivos/File/editais-antigos/2011/06/qqd2011/docs/Anexo_II_-_Relacao_Territorios_de_Identidade.pdf
 
-3. **Relatório de Territórios de Identidade da FUNCEB (2011)**  
-   Fonte utilizada para a tabela `territorios_identidade_bahia`.  
-   [FUNCEB – Anexo II: Relação de Territórios de Identidade](https://www.ba.gov.br/fundacaocultural/sites/site-funceb/files/migracao_2024/arquivos/File/editais-antigos/2011/06/qqd2011/docs/Anexo_II_-_Relacao_Territorios_de_Identidade.pdf)
-
-O arquivo original de população foi **preparado e transformado em CSV**, mantendo rastreabilidade em relação às fontes oficiais.
+> Os arquivos em `data/raw/` passaram por um **pré-tratamento inicial** para facilitar a análise, mas mantêm a essência das bases originais.
 
 ---
 
-## 🧹 Etapa 0 — Preparação e limpeza das tabelas
+## Scripts
 
-Antes da importação para o banco de dados, as tabelas foram submetidas a procedimentos de:
-
-- Transformação das bases originais em arquivos CSV.  
-- Limpeza inicial, mantendo apenas **colunas necessárias ao projeto**.  
-- Padronização de nomes de campos e tipos de dados.  
-- Garantia de consistência básica e adequação ao ambiente relacional.  
-
-> O objetivo desta etapa foi assegurar que as tabelas estivessem prontas para importação, mantendo a estrutura essencial para o projeto.
+1. `01_inspecao.sql` – Inspeção inicial das bases  
+2. `02_consistencia.sql` – Verificação de consistência dos municípios  
+3. `03_tratamento.sql` – Atualização de códigos e limpeza  
+4. `04_analise.sql` – Consulta final
 
 ---
 
-## 🧱 Etapa 1 — Inspeção inicial das tabelas
+## Resultados
 
-Após a importação, foi realizada a **inspeção das tabelas** para identificar inconsistências e campos não preenchidos:
-
-- Verificação das tabelas `POP2025_20260113`, `tabela_cod_mun` e `territorios_identidade_bahia`.  
-- Identificação de ausência de preenchimento da coluna `cod_municipio` em algumas tabelas.  
-- Detecção de colunas desnecessárias, como `column6` na tabela `tabela_cod_mun`.  
-
-> Esta inspeção permitiu planejar o tratamento adequado dos dados.
+- Prints e outputs das consultas estão em `results/screenshots/`.
 
 ---
 
-## 🛠️ Etapa 2 — Tratamento das tabelas
+## Observações
 
-As ações realizadas nesta etapa foram:
-
-- Remoção de colunas desnecessárias.  
-- Atualização da coluna `cod_municipio` nas tabelas `POP2025_20260113` e `territorios_identidade_bahia`, garantindo consistência entre as tabelas.  
-
-> Essa etapa garantiu que todos os registros estivessem **integrados e aptos para análises confiáveis**.
-
----
-
-## 🔎 Etapa 3 — Consultas analíticas
-
-Foram desenvolvidas consultas SQL para análise dos municípios da Bahia, considerando:
-
-- População superior a 100.000 habitantes.  
-- Ordenação decrescente pelo número de habitantes.  
-- Associação de cada município ao seu território correspondente.  
-
-> Essas análises permitiram extrair informações relevantes sobre os municípios mais populosos do estado.
-
----
-
-## 🛠️ Tecnologias utilizadas
-
-- SQL Server  
-- SQL Server Management Studio (SSMS)  
-- T-SQL  
-- Git e GitHub  
-
----
-
-## 🎯 Objetivo do projeto
-
-Aplicar conceitos de **tratamento, organização e análise de dados públicos**, utilizando SQL como ferramenta de apoio à extração de informações relevantes para **análise institucional e gestão pública**.
-
----
+- Dados e scripts estão versionados para garantir **reprodutibilidade**.  
+- As estimativas de população são projetadas pelo IBGE para 2025.  
+- A Divisão Territorial Brasileira do IBGE fornece os códigos e limites oficiais dos municípios.  
+- A lista de territórios de identidade da Bahia foi obtida a partir do PDF publicado pela FUNCEB, servindo de referência geográfica para análises territoriais.
 
 ## 📌 Referência
 
@@ -96,6 +48,3 @@ Perfil GitHub:
 
 ---
 
-## 📌 Observação
-
-Este projeto é um conjunto de repositórios voltado à **demonstração de uso prático das bases de dados**, com a finalidade de **assessorar a gestão na tomada de decisões**.
