@@ -51,9 +51,9 @@ Os arquivos em `data/raw/` passaram por um **pré-tratamento inicial** para faci
 
 ## Observações
 
-- Dados e scripts estão versionados para garantir **reprodutibilidade**.  
-- Estimativas de população são oficiais do IBGE para 2025.  
-- A Divisão Territorial Brasileira do IBGE fornece códigos e limites municipais confiáveis.  
+- Dados e scripts estão versionados para garantir **reprodutibilidade**.
+- Estimativas de população são oficiais do IBGE para 2025.
+- A Divisão Territorial Brasileira do IBGE fornece códigos e limites municipais confiáveis.
 - A lista de territórios de identidade da FUNCEB foi usada como referência geográfica para análise territorial.
 
 
