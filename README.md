@@ -35,10 +35,10 @@ Os arquivos em `data/raw/` passaram por um **pré-tratamento inicial** para faci
 
 ## Scripts SQL
 
-1. `01_inspecao.sql` – Inspeção inicial das bases  
-2. `02_consistencia.sql` – Verificação de consistência dos municípios  
-3. `03_tratamento.sql` – Atualização de códigos e limpeza  
-4. `04_analise.sql` – Consulta final e geração de resultados
+1. `01_inspecao.sql` – Inspeção inicial das bases.  
+2. `02_consistencia.sql` – Verificação de consistência dos municípios.  
+3. `03_tratamento.sql` – Atualização de códigos e limpeza.  
+4. `04_analise.sql` – Consulta final e geração de resultados.
 
 ---
 
